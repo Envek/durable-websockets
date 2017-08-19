@@ -19,7 +19,7 @@ function insert_message(message, source) {
   var $element = $('tbody#messages tr[title='+message.id+']')
   if(!$element.length)
     $element = $('<tr title="'+message.id+'"><td class="cable"></td><td class="rabbit"></td></tr>').appendTo('tbody#messages');
-  $('.'+source, $element).append($("<p>").text("Received text “"+message.content+"” at "+(new Date()).toISOString()));
+  $('.'+source, $element).append($("<p>").text(message.content));
 }
 
 // http://stackoverflow.com/a/2117523/338859
